@@ -3,7 +3,7 @@
 
   &#xa0;
 
-  <!-- <a href="https://landingasync.netlify.app">Demo</a> -->
+  <a href="https://landingasync.netlify.app">Demo</a>
 </div>
 
 <h1 align="center">Landing Async</h1>
