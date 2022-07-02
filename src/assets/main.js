@@ -1,6 +1,7 @@
-const API_URL = "https://youtube-v31.p.rapidapi.com/search?channelId=UC-NM1_vcSZ0O2dtuASOwRew&part=snippet%2Cid&order=date&maxResults=9";
+const API_URL = "https://youtube-v31.p.rapidapi.com/search?channelId=UC8LeXCWOalN8SxlrPcG-PaQ&part=snippet%2Cid&order=date&maxResults=9";
 
 const content = null || document.getElementById("content");
+const contentError = null || document.getElementById("content-error");
 
 const options = {
     method: "GET",
@@ -35,10 +36,18 @@ async function fetchData(url_Api) {
                 </div>
             </a>
         </div>
-        `).slice(0,4).join('')}
+        `).slice(0,8).join('')}
         `;
         content.innerHTML = view;
-    } catch (error) {
-        console.log(error);
+    } catch (err) {
+        console.error(err);
+        const error = `
+        <div class="flex justify-center items-center flex-col gap-2 h-44 bg-red-100">
+            <h1 class="text-3xl text-red-600">A ocurrido un error...</h1>
+            <p class="text-gray-600">...con la lista de videos. This is the following error:</p>
+            <p class="text-gray-600 font-bold">${err.message}</p>
+        </div>
+        `;
+        contentError.innerHTML = error;
     }
 })();
